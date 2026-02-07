@@ -1,0 +1,65 @@
+
+.animation-1-container {
+  height: 100%;
+  width: 100%;
+  border: 2px dotted black;
+  position: relative;
+  overflow: hidden;
+}
+
+.openAndclose {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: black;
+  border: 2px dotted black;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 4000ms ease-in-out;
+}
+
+
+.sidebar {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  border: 2px dotted black;
+  padding: 10px;
+  height: 80%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 1;
+  transition: all 1000ms ease-out;
+  z-index: 10;
+}
+
+.sidebar a {
+  display: block;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar > *:not(:last-child) {
+  margin-bottom: 8px;
+  border-bottom: 2px solid black;
+}
+
+.sidebar.open {
+ right: -50%;
+  opacity: 0;
+  transition: all 2000ms ease-in;
+}

@@ -1,0 +1,20 @@
+<div class="animation-1-container" (click)="closeSidebar()">
+  <h4>animation-1</h4>
+  <p class="subtitle">Side bar animation</p>
+
+  <button
+    class="openAndclose"
+    (click)="toggleSidebar(); $event.stopPropagation()"
+    aria-label="toggle sidebar"
+  >
+    {{ !isSidebarOpen() ? 'X' : '←' }}
+  </button>
+
+  <nav
+    class="sidebar"
+    [class.open]="isSidebarOpen()"
+    (click)="$event.stopPropagation()"
+  >
+    <a *ngFor="let item of options">{{ item }}</a>
+  </nav>
+</div>

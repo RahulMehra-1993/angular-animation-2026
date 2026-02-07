@@ -1,0 +1,98 @@
+:host {
+  /* Define the variable here */
+  --card-animation-duration: 2s;
+  --card-animation-delay: 200ms;
+}
+
+.animation-3-container {
+  height: 80dvh;
+  border: 2px dotted black;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  border: 2px dotted yellowgreen;
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  
+}
+
+.card > button {
+  width: fit-content;
+  padding: 10px 20px;
+  animation-timeline: view(block 50%);
+  animation: button-show calc(var(--card-animation-duration) * 1) ease-in
+    calc(var(--card-animation-duration) * 2) forwards;
+  border-style: none;
+  background-color: rgba(255, 255, 255, 0.362);
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  opacity: 0;
+}
+
+.card:hover > button {
+  outline-offset: 10px;
+  outline: 2px dotted white;
+  background-color: white;
+  transition: all 2s;
+}
+
+.card > p {
+    animation: text-animation  calc(var(--card-animation-duration) * 1) ease-in  calc(var(--card-animation-duration) * 1.2) forwards;
+    opacity: 0;
+}
+
+.card-1 {
+  animation: card-feint calc(var(--card-animation-duration) * 1) linear var(--card-animation-delay)
+    forwards;
+}
+
+.card-2 {
+  animation: card-feint calc(var(--card-animation-duration) * 1.2) linear
+    var(--card-animation-delay) forwards;
+}
+
+@keyframes card-feint {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes button-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+@keyframes text-animation {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

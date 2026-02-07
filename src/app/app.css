@@ -1,0 +1,48 @@
+.container {
+  height: 100dvh;        
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 10px;
+}
+
+.container > *:not(.home) {
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}  
+
+.router-container {
+    flex: 1;
+    height: 100%;
+}
+
+.home {
+  width: fit-content;
+  align-self: flex-start;
+  background-color: black;
+  color: white;
+  border-style: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #333;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  color: #777;
+  align-self: end;
+}
+
+.page {
+  background-color: white;
+  height: 100vh;
+}
